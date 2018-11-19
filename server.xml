@@ -1,5 +1,5 @@
-  <Connector port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol"
-               maxThreads="150" SSLEnabled="true" compression="on" schems="https" secure="true" keystoreFile="conf/name.jks" keystorePass="password" SSLVerifyClient="none" SSLProtocol="TLSv1.2">
+   <Connector port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol"
+               maxThreads="150" SSLEnabled="true" compression="on" scheme="https" secure="true" keystoreFile="conf/name.jks" keystorePass="password" SSLVerifyClient="none" SSLProtocol="TLSv1.2">
        <!--  <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
         <SSLHostConfig honorCipherOrder="false" >
             <Certificate certificateKeyFile="conf/localhost-rsa-key.pem"
