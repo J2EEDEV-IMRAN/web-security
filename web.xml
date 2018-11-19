@@ -36,7 +36,7 @@
       <web-resource-name>HTTPSOnly</web-resource-name>
       <url-pattern>/*</url-pattern>
     </web-resource-collection>
-    <user-data-contraint>
+    <user-data-constraint>
       <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-    </user-data-contraint>
+    </user-data-constraint>
   </security-constraint>
