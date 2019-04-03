@@ -1,0 +1,240 @@
+
+
+																		Web Hosting In Dedicated Server
+														----------------------------------------------------------
+														----------------------------------------------------------
+
+
+BASIC
+------------
+------------
+
+1. sudo apt-get update
+2. cp -i shutdown.sh /opt/code/
+3. sudo apt-get install wget
+
+
+JDK SETUP AND HOMEVARIABLE SETUP
+--------------------------------
+--------------------------------
+
+1. Remote Login with putty software
+
+2. jdk installation
+    ->apt install <selet_package>
+    ->check java version with  : java -version
+
+ 3. To Get JAVA_HOME Path go to the path : /ure/lib/jvm/java-1.8.0-openjdk-amd64 (you can check path by going 'cd /ure/lib/jvm/java-1.8.0-openjdk-amd64' )
+
+     Use : 'vim /etc/profile' to set 'export JAVA_HOME= /ure/lib/jvm/java-1.8.0-openjdk-amd64' (NB: -> To Write Click Enter Button
+                                                                                                     -> TO Save & Exit click 'Escape Button' then Write ':wq')
+
+ 
+
+
+
+ MYSQL Instation
+ ----------------
+ ----------------
+
+1. Installation
+     apt install mysql-server
+
+2. MYSQL security installation
+      sudo mysql_secure_installation
+
+3. Access in to mysql
+       Go Into mysql to write slect query with the command : mysql -u root -p
+
+4. See user cridientials and sicurity with the query:
+       SELECT user.user,user.authentication_string,user.host  FROM mysql.user;
+
+5. To Check Status we have to Exit
+        write : exit click : Enter 
+        -> For Status
+             systemctl status mysql.service
+        -> For Checking Version
+             sudo mysqladmin -p -u root version
+
+ 6. https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
+
+
+
+ PHP MYADMIN INSTALLATION
+------------------------
+------------------------
+
+1. apt install phpmyadmin php-mbstring php-gettext  (Hit SPACE, TAB, and then ENTER to select Apache.) /usr/share/doc/phpmyadmin
+
+sudo phpenmod mbstring
+
+sudo systemctl restart apache2
+
+2. (If after hiting 172.22.8.121:phpmyadmin browser shows error -> mbstring is missing for phpmyadmin )
+ 
+ NB: RF LINK -> https://askubuntu.com/questions/772397/mbstring-is-missing-for-phpmyadmin-in-ubuntu-16-04
+
+ sudo apt-get install php-mbstring php7.0-mbstring php-gettext libapache2-mod-php7.0
+
+ sudo systemctl restart apache2
+
+
+
+ APACHE INSTALLATION
+-------------------
+-------------------
+
+(Form root)sudo apt-get install apache2
+sudo ufw app list 
+sudo ufw allow 'Apache Full'
+sudo ufw status
+sudo systemctl status apache2
+
+REF LINK: https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-18-04
+
+
+MYSQL JDBC DRIVER INSTALLATION
+------------------------------
+------------------------------
+
+apt-get install libmysql-java
+
+
+ TOMCAT INSTALLATION
+ --------------------
+ --------------------
+
+
+  cd opt
+ 
+  mkdir code
+ 
+  cd code
+ 
+  download : wget https://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.38/bin/apache-tomcat-8.5.38.tar.gz
+
+  Unzip : tar -xf apache-tomcat-8.5.38.tar.gz
+
+  
+
+  TOMCAT LOG CHECKING
+  -------------------
+  -------------------
+
+  1. Afte entering into tomcat directory hit :  cd logs/
+       
+  2. Then : tail -f catalina.out
+
+
+
+DATABSE IMPORT
+--------------
+--------------
+
+1. Go Into usr/bin directory with :
+       cd /usr/bin
+
+2. Enter Into mysql:
+       mysql -u root -p
+
+3. The import database:
+       use DATABASE_NAME;
+       source DATABAE_NAME_IN_DIRECTORY;
+
+
+
+ N. B. : 
+-------- After importing database to mysql if it shows upper case problem in table name then do this
+         
+         ->Open terminal and edit /etc/mysql/my.cnf
+
+         sudo nano /etc/mysql/my.cnf
+
+         ->Underneath the [mysqld] section.add:
+
+		[mysqld]
+		lower_case_table_names = 1
+
+		->Restart mysql
+
+		sudo /etc/init.d/mysql restart
+
+
+N. B. :
+------- For auto reconnection to database
+        
+                  -> https://stackoverflow.com/questions/5060106/losing-connection-to-mysql-after-a-while-and-not-reconnecting
+
+
+
+
+
+  AFTER DEPLOYING PROJECT FIREWALL
+  --------------------------------
+  --------------------------------
+  
+  sudo ufw disable 
+  sudo ufw enable
+  sudo ufw allow 8080/tcp
+  sudo ufw allow 6000:6007/tcp
+  sudo ufw allow from 15.15.15.51 to any port 22
+  sudo ufw allow from 15.15.15.0/24 to any port 22
+  sudo ufw delete allow 80
+
+  sudo ufw status numbered
+
+
+
+
+REF LINK: https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-16-04
+
+https://devanswers.co/installing-phpmyadmin-apache-ubuntu-18-04/
+
+https://devanswers.co/installing-apache-mysql-php-lamp-stack-ubuntu-18-04/
+
+https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/jdk-8u201-linux-x64.tar.gz
+
+
+
+
+IMPORTANT
+
+
+https://www.youtube.com/watch?v=tbzmEkWlLIQ
+https://www.youtube.com/watch?v=Njx1V4ZW_g0
+
+
+
+
+
+TOMCAT SECURITY
+-----------------
+-----------------
+
+https://www.upguard.com/articles/15-ways-to-secure-apache-tomcat-8
+
+<Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" enableLookups="false" xpoweredby="false" server="Web"/>
+
+
+
+
+
+VIRTUAL HOST IN APACHE
+-----------------------
+-----------------------
+
+https://stackoverflow.com/questions/8469628/tomcat-7-0-23-cannot-establish-ssl-connection-from-apache-server
+
+
+
+
+https://medium.com/@raupach/how-to-install-lets-encrypt-with-tomcat-3db8a469e3d2
+https://medium.com/beyond-the-helpdesk/lets-encrypt-for-windows-10-e07556c811b4
+
+
+MYSQL CONNECTION LOST OVER NIGHT
+---------------------------------
+---------------------------------
+https://stackoverflow.com/questions/5905399/mysql-error-occurs-overnight-last-packet-sent-to-the-server-was-0-ms-ago
