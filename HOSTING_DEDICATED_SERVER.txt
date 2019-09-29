@@ -83,13 +83,16 @@ sudo systemctl restart apache2
  APACHE INSTALLATION
 -------------------
 -------------------
+MOST IMPORTANT FOR HOSTING :
+https://www.bogotobogo.com/Java/tutorials/Spring-Boot/How-to-Setup-Apache-as-Reverse-Proxy-for-Tomcat8-Server-using-mod-proxy.php
+
 
 (Form root)sudo apt-get install apache2
 sudo ufw app list 
 sudo ufw allow 'Apache Full'
 sudo ufw status
 sudo systemctl status apache2
-
+apt-get purge apache2
 REF LINK: https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-18-04
 
 
