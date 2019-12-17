@@ -232,7 +232,9 @@ https://stackoverflow.com/questions/8469628/tomcat-7-0-23-cannot-establish-ssl-c
 ----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------APACHE(MOST IMOPRTANT FOR HOSTING)--------------
 ----------------------------------------------------------------------------------------------------------
+https://www.bogotobogo.com/Java/tutorials/Spring-Boot/How-to-Setup-Apache-as-Reverse-Proxy-for-Tomcat8-Server-using-mod-proxy.php
 https://www.digitalocean.com/community/questions/how-to-configure-tomcat-java-web-application-in-apache
+https://askubuntu.com/questions/896988/change-phpmyadmin-port-from-80-to-another-number
 https://tecadmin.net/setup-apache-as-reverse-proxy-for-tomcat/
 https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-18-04
 
