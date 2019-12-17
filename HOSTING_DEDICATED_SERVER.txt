@@ -229,6 +229,12 @@ VIRTUAL HOST IN APACHE
 -----------------------
 
 https://stackoverflow.com/questions/8469628/tomcat-7-0-23-cannot-establish-ssl-connection-from-apache-server
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------APACHE(MOST IMOPRTANT FOR HOSTING)--------------
+----------------------------------------------------------------------------------------------------------
+https://www.digitalocean.com/community/questions/how-to-configure-tomcat-java-web-application-in-apache
+https://tecadmin.net/setup-apache-as-reverse-proxy-for-tomcat/
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-18-04
 
 
 
