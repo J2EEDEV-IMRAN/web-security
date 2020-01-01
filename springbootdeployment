@@ -1,0 +1,30 @@
+1. have to install jdk and maven 
+   -> then have to set home variable
+   
+2. after setting home variable have to check whether maven is installed or not
+    -> with : mvn -version 
+ 
+3. then go to the directory of pom.xml file 
+     ->then write command : mvn clean
+     ->then write command : mvn install
+
+4. if anything goes wrong badly then go to .m2/repository/ 
+       ->then delete all file
+       -> re-run command mvn install
+ 
+5. depending on the
+         -> <packaging>awr</packaging>
+      .war file will be ceated then
+      
+6. then we can put the file into tomcat server
+ 
+7. depending on the
+         -> <packaging>jar</packaging>
+      .jar file will be ceated 
+      -> if we run mvn package
+      
+8. we can run the jar file with 
+          java -jar <jar_name>.jar
+          
+ ref: 
+ 
