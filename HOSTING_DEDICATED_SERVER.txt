@@ -3,6 +3,10 @@
 																		Web Hosting In Dedicated Server
 														----------------------------------------------------------
 														----------------------------------------------------------
+														
+Permission set up for file
+--------------------------
+chmod g+wrx testfile
 
 
 BASIC
@@ -12,6 +16,7 @@ BASIC
 1. sudo apt-get update
 2. cp -i shutdown.sh /opt/code/
 3. sudo apt-get install wget
+4. unstall fillname.zip
 
 
 JDK SETUP AND HOMEVARIABLE SETUP
