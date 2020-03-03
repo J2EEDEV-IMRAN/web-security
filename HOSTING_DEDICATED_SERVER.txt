@@ -8,6 +8,15 @@ Permission set up for file
 --------------------------
 chmod g+wrx testfile
 
+way to check available and consumed space in disk
+-------------------------------------------------
+df -h
+
+directory for apache is 
+-----------------------
+/etc/apache2/
+
+
 
 BASIC
 ------------
