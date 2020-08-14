@@ -51,11 +51,15 @@ JDK SETUP AND HOMEVARIABLE SETUP
  ----------------
  ----------------
 
+REF: https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
+
 1. Installation
+     sudo apt update
      apt install mysql-server
 
 2. MYSQL security installation
       sudo mysql_secure_installation
+      systemctl status mysql.service
 
 3. Access in to mysql
        Go Into mysql to write slect query with the command : mysql -u root -p
@@ -91,8 +95,11 @@ sudo systemctl restart apache2
  sudo apt-get install php-mbstring php7.0-mbstring php-gettext libapache2-mod-php7.0
 
  sudo systemctl restart apache2
-
-
+ 
+ 3. If after giving username and password phpmyadmin shows -> mysqli_real_connect(): (HY000/1698): Access denied for user
+ 
+ see this video-> https://www.youtube.com/watch?v=iqx6AqqCgCI
+ 
 
  APACHE INSTALLATION
 -------------------
